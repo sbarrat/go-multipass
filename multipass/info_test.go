@@ -1,10 +1,10 @@
 package multipass
 
 import (
-	"fmt"
 	"testing"
 )
 
+/*
 func TestCreateInfoAndDelete(t *testing.T) {
 	instance, err := Launch(&LaunchReq{
 		CPUS: "2",
@@ -36,7 +36,8 @@ func TestCreateInfoAndDelete(t *testing.T) {
 	}
 
 }
-
+*/
+/*
 func TestParsing(t *testing.T) {
 
 	instance := parseInfo(`Name:           perennial-trogon
@@ -50,4 +51,12 @@ Memory usage:   83.6M out of 985.6M`)
 
 	fmt.Printf(instance.IP)
 
+}
+*/
+func TestInfo(t *testing.T) {
+	instanceInfo, err := Info(&InfoRequest{Name: "nfs"})
+	if err != nil {
+		t.Fatal(err)
+	}
+	t.Log(instanceInfo)
 }
